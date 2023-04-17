@@ -40,7 +40,7 @@ async def add_student(student_data: dict) -> dict:
 
 
 #Retrieve a student with a matching ID
-async def retrieve_student(id: str, data: dict):
+async def retrieve_student(id: str):
     student = await student_collection.find_one({"_id": ObjectId(id)})
     if student:
         return student_helper(student)
